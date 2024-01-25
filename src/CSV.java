@@ -1,10 +1,11 @@
+package src;
+
 /**
  * @author Nils Muralles & Víctor Pérez
  * @version 1.0.0
  * @since 24/01/24
  * Clase que genera los datos para el ordenamiento
  */
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
@@ -45,7 +46,7 @@ public class CSV {
      * @param amount Número de datos que se desean generar
      * @throws IOException Hace que Main maneje la excepción
      */
-    public void addData(int amount) throws IOException{
+    public void addData(int amount) throws IOException {
         generateFile("Number", data); // Genera el archivo
         BufferedWriter writer = new BufferedWriter(new FileWriter(data, true)); // Escritor
         Random random = new Random();
