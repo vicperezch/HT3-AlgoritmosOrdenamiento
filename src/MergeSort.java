@@ -15,9 +15,7 @@ public class MergeSort<T extends Comparable<T>> implements ISort<T> {
      * Utiliza el Merge Sort para ordenar un array
      */
     @Override
-    public T[] sort(T[] arr) {
-        int lenght = arr.length;
-        int middle = lenght/2;
+    public T[] sort(T[] arr, int lenght, int middle) {
 
         if (lenght <= 1 || arr == null) {
             return arr;
@@ -26,8 +24,8 @@ public class MergeSort<T extends Comparable<T>> implements ISort<T> {
         T[] leftArr = Arrays.copyOfRange(arr, 0, middle);
         T[] rightArr = Arrays.copyOfRange(arr, middle, lenght);
 
-        leftArr = sort(leftArr);
-        rightArr = sort(rightArr);
+        leftArr = sort(leftArr, leftArr.length, leftArr.length / 2);
+        rightArr = sort(rightArr, rightArr.length, rightArr.length / 2);
         merge(leftArr, rightArr, arr);
 
         return arr;

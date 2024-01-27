@@ -10,13 +10,13 @@ public class GnomeSort<T extends Comparable<T>> implements ISort<T> {
 
     /**
      * @param arr Array a ordenar
+     * @param index Índice de inicio
+     * @param lenght Índice de fin
      * @return Array ordenado
      * Utiliza el Gnome Sort para ordenar un array
      */
     @Override
-    public T[] sort(T[] arr) {
-        int index = 0; 
- 
+    public T[] sort(T[] arr, int lenght, int index) {
         while (index < arr.length) { 
             if (index == 0 || arr[index].compareTo(arr[index - 1]) >= 0) {
                 index++; 
