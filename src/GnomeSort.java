@@ -11,7 +11,7 @@ public class GnomeSort<T extends Comparable<T>> implements ISort<T> {
     /**
      * @param arr Array a ordenar
      * @param index Índice de inicio
-     * @param lenght Índice de fin
+     * @param lenght Tamaño del array
      * @return Array ordenado
      * Utiliza el Gnome Sort para ordenar un array
      */

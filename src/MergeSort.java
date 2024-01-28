@@ -11,6 +11,8 @@ public class MergeSort<T extends Comparable<T>> implements ISort<T> {
 
     /**
      * @param arr Array a ordenar
+     * @param lenght Tamaño del array
+     * @param middle Índice del elemento medio
      * @return Array ordenado
      * Utiliza el Merge Sort para ordenar un array
      */
@@ -32,10 +34,10 @@ public class MergeSort<T extends Comparable<T>> implements ISort<T> {
     }
 
     /**
-     * Método auxiliar que une los subarrays ordenados
      * @param leftArr Array con primera mitad de elementos
      * @param rightArr Array con segunda mitad de elementos
      * @param arr Array original
+     * Método auxiliar que une los subarrays ordenados
      */
     public void merge(T[] leftArr, T[] rightArr, T[] arr) {
         int leftIndex = 0;

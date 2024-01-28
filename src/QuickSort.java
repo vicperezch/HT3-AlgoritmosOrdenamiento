@@ -10,6 +10,8 @@ public class QuickSort<T extends Comparable<T>> implements ISort<T> {
 
     /**
      * @param arr Array a ordenar
+     * @param begin Índice de inicio
+     * @param end Índice de fin
      * @return Array ordenado
      * Utiliza el Quick Sort para ordenar un array
      */
@@ -25,6 +27,7 @@ public class QuickSort<T extends Comparable<T>> implements ISort<T> {
         return arr;
     }
 
+    
     /**
      * @param arr Array a ordenar
      * @param begin Índice de inicio
