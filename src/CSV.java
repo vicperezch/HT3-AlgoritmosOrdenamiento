@@ -53,8 +53,8 @@ public class CSV {
         
         // Genera el HashSet que no permite que se repitan los números
         Set<Integer> nums = new HashSet<Integer>();
-        while (nums.size() <= amount) {
-            int number = random.nextInt(3000) + 1;
+        while (nums.size() < amount) {
+            int number = random.nextInt(10000);
             if (nums.add(number)) {
                 writer.write(String.valueOf(number));
                 writer.newLine();   
