@@ -7,7 +7,9 @@ package src;
  * Clase que genera los datos para el ordenamiento
  */
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.HashSet;
@@ -61,5 +63,30 @@ public class CSV {
             }
         }
         writer.close();
+    }
+
+    /**
+     * Lee los datos del archivo
+     * @return Los números del archivo
+     * @throws IOException Hace que Main maneje la excepción
+     */
+    public Integer[] readData() throws IOException {
+        if (data.exists()) {
+            BufferedReader reader = new BufferedReader(new FileReader(data));
+            Integer[] numbers = new Integer[3000];
+            String line = reader.readLine();
+            int count = 0;
+            
+            while ((line = reader.readLine()) != null) {
+                numbers[count] = Integer.parseInt(line);
+                count++;
+            }
+
+            reader.close();
+
+            return numbers;
+        }
+
+        return null;
     }
 }
