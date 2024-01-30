@@ -21,7 +21,7 @@ public class RadixSort <T extends Comparable<T>> implements ISort<T>{
             int[] intArr = new int[arr.length];
             
             for (int i = 0; i < arr.length; i++) {
-                    intArr[i] = (int) arr[i];
+                    intArr[i] = (Integer) arr[i];
                     if (arr[i].compareTo(max) > 0) {
                         max = arr[i];
                     }
@@ -30,7 +30,7 @@ public class RadixSort <T extends Comparable<T>> implements ISort<T>{
                     }
             }
 
-            for (int exp = 1;((int) max)/exp > 0; exp*=10) {
+            for (int exp = 1;((Integer) max)/exp > 0; exp*=10) {
                     countingSort(intArr, exp);
             }
 

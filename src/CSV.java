@@ -70,10 +70,10 @@ public class CSV {
      * @return Los números del archivo
      * @throws IOException Hace que Main maneje la excepción
      */
-    public Integer[] readData() throws IOException {
+    public Integer[] readData(int datos) throws IOException {
         if (data.exists()) {
             BufferedReader reader = new BufferedReader(new FileReader(data));
-            Integer[] numbers = new Integer[3000];
+            Integer[] numbers = new Integer[datos];
             String line = reader.readLine();
             int count = 0;
             
@@ -88,5 +88,14 @@ public class CSV {
         }
 
         return null;
+    }
+
+    /**
+     * Borra los datos del CSV una vez son capturados en el Array
+     * @throws IOException Hace que main maneje la excepción
+     */
+    public void clear() throws IOException {
+        data.delete();
+        generateFile("Number", data);
     }
 }
